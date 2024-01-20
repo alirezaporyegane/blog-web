@@ -1,10 +1,11 @@
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
+import { I18nProvider } from '@/service/i18n';
+import Header from '@/app/components/Layout/Header';
 import './globals.css';
-import { cookies } from 'next/headers';
+import { AppProps } from 'next/app'
 
 const font = localFont({ src: '../../public/fonts/Vazirmatn[wght].ttf' });
-import Header from '@/app/components/Layout/Header';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -16,16 +17,16 @@ type Props = {
 };
 
 export default function RootLayout({ children }: Props) {
-  const cookieStore = cookies();
-  console.log(cookieStore.get('test'));
   return (
     <html lang='en'>
       <body className={font.className}>
-        <Header />
+        <I18nProvider locale='fa'>
+          <Header />
 
-        <main className='flex min-h-screen flex-col items-center justify-between'>
-          {children}
-        </main>
+          <main className='flex min-h-screen flex-col items-center justify-between'>
+            {children}
+          </main>
+        </I18nProvider>
       </body>
     </html>
   );
