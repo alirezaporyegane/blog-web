@@ -1,3 +1,5 @@
 export default function Blog() {
-  return <>Blog</>
+  return <>
+    <button className="btn btn-primary">test</button>
+  </>
 }
