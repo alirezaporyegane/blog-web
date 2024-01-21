@@ -1,3 +1,6 @@
 export default {
-  blog: 'بلاگ',
-} as const;
+  home: 'خانه',
+  blog: 'وبلاگ',
+  aboutUs: 'درباره ما',
+  newsWebsite: 'وبسایت خبری'
+} as const

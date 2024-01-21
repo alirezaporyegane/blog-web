@@ -1,33 +1,22 @@
-import fa from "./fa";
+import fa from './fa';
+import en from './en';
 
-const lng = 'fa';
-let translate = { fa };
+const lng = process.env.NEXT_LOCALE as keyof typeof translate;
+let translate = { fa, en };
+
 Object.values(translate[lng]).forEach(
   (value) => (translate = { ...translate, ...value })
 );
 
-const resources = {
+const resources: any = {
   [lng]: {
-    translation: {
-      ...translate,
-    },
+    ...translate,
   },
 };
 
-const i18n = {
-  locales: ['fa'],
-  lng: 'fa',
-  defaultLocale: 'fa',
-  resources,
-  interpolation: {
-    escapeValue: false,
-  },
-};
+export function i18nTranslate(path: string) {
+  if (resources && typeof resources === 'object')
+    return resources[lng][path] || path;
 
-import { createI18n } from 'next-international'
-
-export const { useI18n, useScopedI18n, I18nProvider, getLocaleProps } = createI18n({
-  fa: () => import('./fa'),
-})
-
-module.exports = i18n;
+  return path;
+}

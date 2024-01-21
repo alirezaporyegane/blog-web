@@ -10,14 +10,10 @@
   },
   "dependencies": {
     "axios": "^1.6.5",
-    "i18next": "^23.7.17",
     "next": "13.5.6",
-    "next-i18next": "^15.2.0",
-    "next-international": "^1.2.3",
     "qs": "^6.11.2",
     "react": "^18",
-    "react-dom": "^18",
-    "react-i18next": "^14.0.1"
+    "react-dom": "^18"
   },
   "devDependencies": {
     "@types/node": "^20",
