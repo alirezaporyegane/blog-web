@@ -22,7 +22,18 @@ const config: Config = {
   },
   plugins: [require("daisyui")],
   daisyui: {
-    themes: ["light", "dark"],
+    themes: [
+      {
+        light: {
+          primary: "#0F1035",
+          info: "#7FC7D9",
+          error: "#DA3E52",
+          warning: "F0A202",
+          success: "#307351",
+        },
+      },
+      "dark",
+    ],
   },
 };
 export default config;
