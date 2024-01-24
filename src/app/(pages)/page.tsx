@@ -1,4 +1,4 @@
-import { i18nTranslate } from '@/service/i18n';
+import { i18nTranslate } from '../../service/i18n';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
