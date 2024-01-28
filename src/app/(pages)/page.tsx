@@ -5,6 +5,6 @@ export const metadata: Metadata = {
   title: i18nTranslate('newsWebsite'),
 };
 
-export default function Home() {
+export default function HomePage() {
   return <>home</>;
 }
